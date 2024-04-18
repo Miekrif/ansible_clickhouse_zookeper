@@ -30,3 +30,12 @@
     group: clickhouse
     mode: '0644'
   become: true
+
+- name: Configure Zookeeper for ClickHouse
+  command: >
+    echo "create /clickhouse ''" | zookeeper-shell localhost:2181 &&
+    echo "create /clickhouse/tables ''" | zookeeper-shell localhost:2181 &&
+    echo "create /clickhouse/replicas ''" | zookeeper-shell localhost:2181
+  become: true
+  when: zookeeper_install
+
