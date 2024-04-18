@@ -1,0 +1,32 @@
+---
+# tasks/zookeeper/install.yml
+- name: Install Zookeeper
+  command: urpmi --auto {{ zookeeper_rpm_package }}
+  become: true
+
+- name: Copy Zookeeper configuration from template
+  template:
+    src: zoo.cfg.j2
+    dest: /opt/zookeeper/conf/zoo.cfg
+    owner: zookeeper
+    group: zookeeper
+    mode: '0644'
+  become: true
+
+- name: Copy ClickHouse cluster configuration from template
+  template:
+    src: cluster.xml.j2
+    dest: /etc/clickhouse-server/cluster.xml
+    owner: clickhouse
+    group: clickhouse
+    mode: '0644'
+  become: true
+
+- name: Copy ClickHouse main configuration from template
+  template:
+    src: main.xml.j2
+    dest: /etc/clickhouse-server/config.d/main.xml
+    owner: clickhouse
+    group: clickhouse
+    mode: '0644'
+  become: true

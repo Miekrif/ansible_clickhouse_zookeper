@@ -1,0 +1,1055 @@
+ansible-playbook main.yml -b -vvv
+ansible-playbook [core 2.16.5]ighte  ansible-playbook main.yml -b -vvv                                                                               2 ✘ │ 12s │ int  │ 08:18:49
+  config file = /Users/vskibenko/int/main_course/innotech/fsighte/ansible.cfg
+  configured module search path = ['/Users/vskibenko/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible
+  ansible collection location = /Users/vskibenko/.ansible/collections:/usr/share/ansible/collections
+  executable location = /opt/homebrew/bin/ansible-playbook
+  python version = 3.12.3 (main, Apr  9 2024, 08:09:14) [Clang 15.0.0 (clang-1500.3.9.4)] (/opt/homebrew/Cellar/ansible/9.4.0_1/libexec/bin/python)
+  jinja version = 3.1.3
+  libyaml = True
+Using /Users/vskibenko/int/main_course/innotech/fsighte/ansible.cfg as config file
+host_list declined parsing /Users/vskibenko/int/main_course/innotech/fsighte/hosts as it did not pass its verify_file() method
+script declined parsing /Users/vskibenko/int/main_course/innotech/fsighte/hosts as it did not pass its verify_file() method
+auto declined parsing /Users/vskibenko/int/main_course/innotech/fsighte/hosts as it did not pass its verify_file() method
+Parsed /Users/vskibenko/int/main_course/innotech/fsighte/hosts inventory source with ini plugin
+[WARNING]: Found both group and host with same name: fsight
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: main.yml ******************************************************************************************************************************************************************
+1 plays in main.yml
+
+PLAY [fsight] ***********************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/main.yml:2
+<fsight> Attempting python interpreter discovery
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<10.30.57.13> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.8\n/usr/bin/python3\n/usr/bin/python2.7\n/usr/bin/python\n/usr/local/bin/python\nENDFOUND\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'/usr/bin/python3.8 && sleep 0'"'"''
+<10.30.57.13> (0, b'{"platform_dist_result": [], "osrelease_content": "# Standard values\\n# Specification: https://www.freedesktop.org/software/systemd/man/os-release.html\\nNAME=\\"ROSA Chrome Server\\"\\nID=rosa\\nPRETTY_NAME=\\"ROSA Chrome Server 12.4\\"\\nCPE_NAME=\\"cpe:/o:rosalinux:rosa:2021.1\\"\\nMETA_CLASS=server\\nVARIANT_ID=chrome-server\\nANSI_COLOR=\\"1;43\\"\\nVERSION=\\"12.4\\"\\nVERSION_ID=2021.1\\nVERSION_CODENAME=12.4\\nHOME_URL=\\"https://www.rosalinux.ru/en/\\"\\n# TODO: by far not all icons packages provide an icon \\"rosa\\"\\nLOGO=rosa\\nBUG_REPORT_URL=\\"https://bugzilla.rosalinux.ru\\"\\n# ROSA-specific values\\nROSA_OS_BRANCH=chrome\\nROSA_OS_PLATFORM=\\"rosa2021.1\\"\\nROSA_OS_PLATFORM_INTEGER=202110\\nROSA_OS_TYPE=server\\nROSA_OS_VERSION=12.4\\n"}\n', b'')
+<fsight> Python interpreter discovery fallback (unsupported Linux distribution: rosa)
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/setup.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-kcqepobocldqvnyrumknxxkqvphxjhqu ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"ansible_facts": {"ansible_distribution": "ROSA", "ansible_distribution_release": "12.4", "ansible_distribution_version": "2021.1", "ansible_distribution_major_version": "2021", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_os_family": "ROSA", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "ansible_virtualization_tech_guest": ["VMware"], "ansible_virtualization_tech_host": [], "ansible_fips": false, "ansible_system": "Linux", "ansible_kernel": "6.1.58-generic-1rosa2021.1-x86_64", "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Mon Oct 16 22:10:31 UTC 2023", "ansible_machine": "x86_64", "ansible_python_version": "3.8.13", "ansible_fqdn": "v-fsdb-pgsql.local", "ansible_hostname": "v-fsdb-pgsql", "ansible_nodename": "v-fsdb-pgsql", "ansible_domain": "local", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "8b1e5bb8f66a4af8a66ba2d435294da4", "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_pkg_mgr": "urpmi", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCz9GpBD5Z/FGPMIrb87rtVUqy7qqgB+AP/JZjLzjsRhcCXA131OS19gTiXIIcqn64rvLc2wRzCab25tQmYplMKe7aEFY2J7MtcX86KtYGmot6dau83L6g0kDRRLNdO/wPoNUaoFiEKKvQipEA1ccCg1hl6597UxguXyR+1dBzcBN6lRvRcJHRPE+2RWCFuy7PXsTlzbPGlMpBkHFueOZjkWD/myFFYfazRd1j/UEfUTebzAMEe+3vSq3s04UP4kTGcD5N5zuOGJ2koXdHpqr+nchU/V5eJkv8Epfofv4HDgBZc0sUDwK0ElpF+67J1jK/ezEJcPVDCL97GrrvSRiVoYafGftarKeJrsd/Uq1pQFF9Lw8W9xIzW5WB5Vinsss/e14Q0Pb2WORg2rdqHKtMIPkBeOumFhbKG+V7At9z/5Gt1dnAQYvj+w683x0nccfcbmWGgXi3L6PeUt18bXV717ItLLC/eV7sdsju2dxMdJivRHTdOChhL0s4BSUzrO48=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHGLHI4KUtJjEKb11HnUz42u3C8mOilSGodLrJD2FBZryNM9PWCWk/Zi05zmcNOMj4j4nm6N1bNW8OfwTHVhnrY=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIMEppillSA5E64Q4DnUsYc6z0H8quvNa5Pn605FBhAew", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_local": {}, "ansible_system_capabilities_enforced": "N/A", "ansible_system_capabilities": "N/A", "ansible_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-6.1.58-generic-1rosa2021.1-x86_64", "root": "UUID=733075f5-6f32-4c06-a0ed-8e2ac35cdc33", "ro": true, "splash": "silent", "logo.nologo": true, "quiet": true}, "ansible_proc_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-6.1.58-generic-1rosa2021.1-x86_64", "root": "UUID=733075f5-6f32-4c06-a0ed-8e2ac35cdc33", "ro": true, "splash": "silent", "logo.nologo": true, "quiet": true}, "ansible_env": {"SHELL": "/bin/bash", "SUDO_GID": "503", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-kcqepobocldqvnyrumknxxkqvphxjhqu ; /usr/bin/python3.8", "SUDO_USER": "vskibenko", "PWD": "/home/vskibenko", "LOGNAME": "root", "HOME": "/root", "TERM": "unknown", "USER": "root", "SHLVL": "0", "LC_CTYPE": "en_US.UTF-8", "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", "SUDO_UID": "503", "MAIL": "/var/mail/root", "_": "/usr/bin/python3.8"}, "ansible_lsb": {"release": "12.4", "id": "rosa", "description": "ROSA Chrome Server 12.4, platform 2021.1", "codename": "12.4", "major_release": "12"}, "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["fs.fsight.world"]}, "ansible_iscsi_iqn": "", "ansible_selinux_python_present": true, "ansible_selinux": {"status": "disabled"}, "ansible_loadavg": {"1m": 1.78, "5m": 1.51, "15m": 1.06}, "ansible_fibre_channel_wwn": [], "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "2", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "3", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "4", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "5", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "6", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "7", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "8", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "9", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "10", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "11", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "12", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "13", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "14", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz", "15", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz"], "ansible_processor_count": 16, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 16, "ansible_processor_nproc": 16, "ansible_memtotal_mb": 32142, "ansible_memfree_mb": 6874, "ansible_swaptotal_mb": 16071, "ansible_swapfree_mb": 15069, "ansible_memory_mb": {"real": {"total": 32142, "used": 25268, "free": 6874}, "nocache": {"free": 22641, "used": 9501}, "swap": {"total": 16071, "free": 15069, "used": 1002, "cached": 4}}, "ansible_bios_date": "12/12/2018", "ansible_bios_vendor": "Phoenix Technologies LTD", "ansible_bios_version": "6.00", "ansible_board_asset_tag": "NA", "ansible_board_name": "440BX Desktop Reference Platform", "ansible_board_serial": "None", "ansible_board_vendor": "Intel Corporation", "ansible_board_version": "None", "ansible_chassis_asset_tag": "No Asset Tag", "ansible_chassis_serial": "None", "ansible_chassis_vendor": "No Enclosure", "ansible_chassis_version": "N/A", "ansible_form_factor": "Other", "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "VMware-42 13 9d a4 d2 bb 88 4e-44 35 63 b4 06 e4 d3 a2", "ansible_product_uuid": "a49d1342-bbd2-4e88-4435-63b406e4d3a2", "ansible_product_version": "None", "ansible_system_vendor": "VMware, Inc.", "ansible_devices": {"loop1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram11": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "loop6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "loop4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram8": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram14": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "sr0": {"virtual": 1, "links": {"ids": ["ata-VMware_Virtual_SATA_CDRW_Drive_00000000000000000001"], "uuids": [], "labels": [], "masters": []}, "vendor": "NECVMWar", "model": "VMware SATA CD00", "sas_address": null, "sas_device_handle": null, "removable": "1", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "2097151", "sectorsize": "512", "size": "1024.00 MB", "host": "SATA controller: VMware SATA AHCI controller", "holders": []}, "loop2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram12": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "loop0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram10": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "loop7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "sda": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": "VMware", "model": "Virtual disk", "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "1048576", "partitions": {"sda1": {"links": {"ids": [], "uuids": ["733075f5-6f32-4c06-a0ed-8e2ac35cdc33"], "labels": ["ssd"], "masters": []}, "start": "2048", "sectors": "2147479552", "sectorsize": 512, "size": "1024.00 GB", "uuid": "733075f5-6f32-4c06-a0ed-8e2ac35cdc33", "holders": []}}, "rotational": "1", "scheduler_mode": "bfq", "sectors": "2147483648", "sectorsize": "512", "size": "1.00 TB", "host": "Serial Attached SCSI controller: VMware PVSCSI SCSI Controller (rev 02)", "holders": []}, "zram0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "loop5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram9": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram15": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "loop3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "zram7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}, "zram13": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "2057136", "sectorsize": "4096", "size": "1004.46 MB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {"sr0": ["ata-VMware_Virtual_SATA_CDRW_Drive_00000000000000000001"]}, "uuids": {"sda1": ["733075f5-6f32-4c06-a0ed-8e2ac35cdc33"]}, "labels": {"sda1": ["ssd"]}, "masters": {}}, "ansible_uptime_seconds": 4985135, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/sda1", "fstype": "ext4", "options": "rw,relatime,stripe=256", "size_total": 1081913802752, "size_available": 886312427520, "block_size": 4096, "block_total": 264139112, "block_available": 216384870, "block_used": 47754242, "inode_total": 67108864, "inode_available": 63722033, "inode_used": 3386831, "uuid": "733075f5-6f32-4c06-a0ed-8e2ac35cdc33"}], "ansible_is_chroot": false, "ansible_interfaces": ["br-658fb98838ef", "ens192", "vetha50cdc2", "lo", "docker0", "veth9aa1c9a"], "ansible_docker0": {"device": "docker0", "macaddress": "02:42:11:3f:96:1d", "mtu": 1500, "active": false, "type": "bridge", "interfaces": [], "id": "8000.0242113f961d", "stp": false, "speed": -1, "promisc": false, "ipv4": {"address": "172.17.0.1", "broadcast": "172.17.255.255", "netmask": "255.255.0.0", "network": "172.17.0.0", "prefix": "16"}, "features": {"rx_checksumming": "off [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "on", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "on", "tx_fcoe_segmentation": "on", "tx_gre_segmentation": "on", "tx_gre_csum_segmentation": "on", "tx_ipxip4_segmentation": "on", "tx_ipxip6_segmentation": "on", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "on", "tx_tunnel_remcsum_segmentation": "on", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "on", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_vetha50cdc2": {"device": "vetha50cdc2", "macaddress": "a6:d7:54:29:82:1d", "mtu": 1500, "active": true, "type": "ether", "speed": 10000, "promisc": true, "ipv6": [{"address": "fe80::a4d7:54ff:fe29:821d", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "on", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "off", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "on", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "on [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "on", "tx_gre_csum_segmentation": "on", "tx_ipxip4_segmentation": "on", "tx_ipxip6_segmentation": "on", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "on", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_br_658fb98838ef": {"device": "br-658fb98838ef", "macaddress": "02:42:b8:38:24:31", "mtu": 1500, "active": true, "type": "bridge", "interfaces": ["veth9aa1c9a", "vetha50cdc2"], "id": "8000.0242b8382431", "stp": false, "speed": 10000, "promisc": false, "ipv4": {"address": "172.18.0.1", "broadcast": "172.18.255.255", "netmask": "255.255.0.0", "network": "172.18.0.0", "prefix": "16"}, "ipv6": [{"address": "fe80::42:b8ff:fe38:2431", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "off [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "on", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [requested on]", "tx_fcoe_segmentation": "off [requested on]", "tx_gre_segmentation": "on", "tx_gre_csum_segmentation": "on", "tx_ipxip4_segmentation": "on", "tx_ipxip6_segmentation": "on", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "on", "tx_tunnel_remcsum_segmentation": "on", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "on", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_ens192": {"device": "ens192", "macaddress": "00:50:56:93:69:de", "mtu": 1500, "active": true, "module": "vmxnet3", "type": "ether", "pciid": "0000:0b:00.0", "speed": 10000, "promisc": false, "ipv4": {"address": "10.30.57.13", "broadcast": "10.30.57.255", "netmask": "255.255.255.0", "network": "10.30.57.0", "prefix": "24"}, "ipv6": [{"address": "fe80::250:56ff:fe93:69de", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off", "rx_vlan_offload": "on", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "highdma": "on", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_veth9aa1c9a": {"device": "veth9aa1c9a", "macaddress": "6a:01:11:b6:9b:4a", "mtu": 1500, "active": true, "type": "ether", "speed": 10000, "promisc": true, "ipv6": [{"address": "fe80::6801:11ff:feb6:9b4a", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "on", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "off", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "on", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "on [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "on", "tx_gre_csum_segmentation": "on", "tx_ipxip4_segmentation": "on", "tx_ipxip6_segmentation": "on", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "on", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "10.30.57.1", "interface": "ens192", "address": "10.30.57.13", "broadcast": "10.30.57.255", "netmask": "255.255.255.0", "network": "10.30.57.0", "prefix": "24", "macaddress": "00:50:56:93:69:de", "mtu": 1500, "type": "ether", "alias": "ens192"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.17.0.1", "172.18.0.1", "10.30.57.13"], "ansible_all_ipv6_addresses": ["fe80::a4d7:54ff:fe29:821d", "fe80::42:b8ff:fe38:2431", "fe80::250:56ff:fe93:69de", "fe80::6801:11ff:feb6:9b4a"], "ansible_locally_reachable_ips": {"ipv4": ["10.30.57.13", "127.0.0.0/8", "127.0.0.1", "172.17.0.1", "172.18.0.1"], "ipv6": ["::1", "fe80::42:b8ff:fe38:2431", "fe80::250:56ff:fe93:69de", "fe80::6801:11ff:feb6:9b4a", "fe80::a4d7:54ff:fe29:821d"]}, "ansible_date_time": {"year": "2024", "month": "04", "weekday": "Thursday", "weekday_number": "4", "weeknumber": "16", "day": "18", "hour": "10", "minute": "22", "second": "15", "epoch": "1713417735", "epoch_int": "1713417735", "date": "2024-04-18", "time": "10:22:15", "iso8601_micro": "2024-04-18T05:22:15.408688Z", "iso8601": "2024-04-18T05:22:15Z", "iso8601_basic": "20240418T102215408688", "iso8601_basic_short": "20240418T102215", "tz": "+05", "tz_dst": "+05", "tz_offset": "+0500"}, "ansible_apparmor": {"status": "disabled"}, "ansible_python": {"version": {"major": 3, "minor": 8, "micro": 13, "releaselevel": "final", "serial": 0}, "version_info": [3, 8, 13, "final", 0], "executable": "/usr/bin/python3.8", "has_sslcontext": true, "type": "cpython"}, "ansible_hostnqn": "", "ansible_service_mgr": "systemd", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\n', b'')
+[WARNING]: Platform linux on host fsight is using the discovered Python interpreter at /usr/bin/python3.8, but future installation of another Python interpreter could change the
+meaning of that path. See https://docs.ansible.com/ansible-core/2.16/reference_appendices/interpreter_discovery.html for more information.
+ok: [fsight]
+
+TASK [ansible-clickhouse : Include OS Family Specific Variables] ********************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:3
+ok: [fsight] => {
+    "ansible_facts": {},
+    "ansible_included_var_files": [
+        "/Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/vars/empty.yml"
+    ],
+    "changed": false
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:14
+included: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/params.yml for fsight
+
+TASK [ansible-clickhouse : Set clickhouse_service_enable] ***************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/params.yml:3
+ok: [fsight] => {
+    "ansible_facts": {
+        "clickhouse_service_enable": true
+    },
+    "changed": false
+}
+
+TASK [ansible-clickhouse : Set clickhouse_service_ensure] ***************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/params.yml:7
+ok: [fsight] => {
+    "ansible_facts": {
+        "clickhouse_service_ensure": "started"
+    },
+    "changed": false
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:17
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:29
+included: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml for fsight
+
+TASK [ansible-clickhouse : Check clickhouse config, data and logs] ******************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:2
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-jvztfjmvllipmvgjivpvspzesyqswykp ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/var/log/clickhouse-server", "changed": true, "diff": {"before": {"path": "/var/log/clickhouse-server", "owner": 0, "mode": "0775"}, "after": {"path": "/var/log/clickhouse-server", "owner": 600, "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"dest": "/var/log/clickhouse-server", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "state": "directory", "path": "/var/log/clickhouse-server", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => (item=/var/log/clickhouse-server) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "mode": "0770",
+            "owner": 600,
+            "path": "/var/log/clickhouse-server"
+        },
+        "before": {
+            "mode": "0775",
+            "owner": 0,
+            "path": "/var/log/clickhouse-server"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "dest": "/var/log/clickhouse-server",
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/var/log/clickhouse-server",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": "/var/log/clickhouse-server",
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/var/log/clickhouse-server",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dfbjjrcqtsnqrqfvtqqlbbfuruqpfwuo ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/etc/clickhouse-server", "changed": true, "diff": {"before": {"path": "/etc/clickhouse-server", "owner": 0, "group": 0, "mode": "0755"}, "after": {"path": "/etc/clickhouse-server", "owner": 600, "group": 600, "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"dest": "/etc/clickhouse-server", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "state": "directory", "path": "/etc/clickhouse-server", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => (item=/etc/clickhouse-server) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 600,
+            "mode": "0770",
+            "owner": 600,
+            "path": "/etc/clickhouse-server"
+        },
+        "before": {
+            "group": 0,
+            "mode": "0755",
+            "owner": 0,
+            "path": "/etc/clickhouse-server"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "dest": "/etc/clickhouse-server",
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/etc/clickhouse-server",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": "/etc/clickhouse-server",
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/etc/clickhouse-server",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-joliqggamwjuwejwoqhqgnscdaouxovx ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/var/lib/clickhouse/tmp/", "changed": true, "diff": {"before": {"path": "/var/lib/clickhouse/tmp/", "mode": "0750"}, "after": {"path": "/var/lib/clickhouse/tmp/", "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"dest": "/var/lib/clickhouse/tmp/", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "state": "directory", "path": "/var/lib/clickhouse/tmp/", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => (item=/var/lib/clickhouse/tmp/) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "mode": "0770",
+            "path": "/var/lib/clickhouse/tmp/"
+        },
+        "before": {
+            "mode": "0750",
+            "path": "/var/lib/clickhouse/tmp/"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "dest": "/var/lib/clickhouse/tmp/",
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/var/lib/clickhouse/tmp/",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": "/var/lib/clickhouse/tmp/",
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/var/lib/clickhouse/tmp/",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rvxywzeskkauzpsgfzvbxzpluaerdfid ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/var/lib/clickhouse/", "changed": true, "diff": {"before": {"path": "/var/lib/clickhouse/", "mode": "0700"}, "after": {"path": "/var/lib/clickhouse/", "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"dest": "/var/lib/clickhouse/", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "state": "directory", "path": "/var/lib/clickhouse/", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => (item=/var/lib/clickhouse/) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "mode": "0770",
+            "path": "/var/lib/clickhouse/"
+        },
+        "before": {
+            "mode": "0700",
+            "path": "/var/lib/clickhouse/"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "dest": "/var/lib/clickhouse/",
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/var/lib/clickhouse/",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": "/var/lib/clickhouse/",
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/var/lib/clickhouse/",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+Notification for handler restart-ch has been saved.
+Notification for handler restart-ch has been saved.
+Notification for handler restart-ch has been saved.
+Notification for handler restart-ch has been saved.
+
+TASK [ansible-clickhouse : Config | Create config.d folder] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:17
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-mebccbxpolsykjteptuwygpoajmbsset ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/etc/clickhouse-server/config.d", "changed": true, "diff": {"before": {"path": "/etc/clickhouse-server/config.d", "state": "absent", "owner": 0, "group": 0, "mode": "0755"}, "after": {"path": "/etc/clickhouse-server/config.d", "state": "directory", "owner": 600, "group": 600, "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"path": "/etc/clickhouse-server/config.d", "state": "directory", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => {
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 600,
+            "mode": "0770",
+            "owner": 600,
+            "path": "/etc/clickhouse-server/config.d",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "mode": "0755",
+            "owner": 0,
+            "path": "/etc/clickhouse-server/config.d",
+            "state": "absent"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/etc/clickhouse-server/config.d",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/etc/clickhouse-server/config.d",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+
+TASK [ansible-clickhouse : Config | Create users.d folder] **************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:26
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/file.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dslilepgevohzsbbaiksylkmbfmmwnmu ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"path": "/etc/clickhouse-server/users.d", "changed": true, "diff": {"before": {"path": "/etc/clickhouse-server/users.d", "state": "absent", "owner": 0, "group": 0, "mode": "0755"}, "after": {"path": "/etc/clickhouse-server/users.d", "state": "directory", "owner": 600, "group": 600, "mode": "0770"}}, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0770", "state": "directory", "size": 4096, "invocation": {"module_args": {"path": "/etc/clickhouse-server/users.d", "state": "directory", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rwx,o-rwx", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+changed: [fsight] => {
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 600,
+            "mode": "0770",
+            "owner": 600,
+            "path": "/etc/clickhouse-server/users.d",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "mode": "0755",
+            "owner": 0,
+            "path": "/etc/clickhouse-server/users.d",
+            "state": "absent"
+        }
+    },
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "clickhouse",
+            "mode": "ug=rwx,o-rwx",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "clickhouse",
+            "path": "/etc/clickhouse-server/users.d",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "mode": "0770",
+    "owner": "clickhouse",
+    "path": "/etc/clickhouse-server/users.d",
+    "size": 4096,
+    "state": "directory",
+    "uid": 600
+}
+
+TASK [ansible-clickhouse : Config | Generate system config] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:35
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'echo ~vskibenko && sleep 0'"'"''
+<10.30.57.13> (0, b'/home/vskibenko\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/vskibenko/.ansible/tmp `"&& mkdir "` echo /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879 `" && echo ansible-tmp-1713417702.1153028-35477-80783255331879="` echo /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879 `" ) && sleep 0'"'"''
+<10.30.57.13> (0, b'ansible-tmp-1713417702.1153028-35477-80783255331879=/home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879\n', b'')
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/stat.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-thndwpdyuwpmeasujxlmvxgudrjvjbqd ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"changed": false, "stat": {"exists": false}, "invocation": {"module_args": {"path": "/etc/clickhouse-server/config.d/config.xml", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_mime": true, "get_attributes": true}}}\n', b'')
+<10.30.57.13> PUT /Users/vskibenko/.ansible/tmp/ansible-local-354493ui3hpg4/tmpclueiblw/config.j2 TO /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source
+<10.30.57.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' '[10.30.57.13]'
+<10.30.57.13> (0, b'sftp> put /Users/vskibenko/.ansible/tmp/ansible-local-354493ui3hpg4/tmpclueiblw/config.j2 /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'chmod u+x /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/ /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source && sleep 0'"'"''
+<10.30.57.13> (0, b'', b'')
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/copy.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-bccxerhbncmoemjgemphdhnkyszxkbdx ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"dest": "/etc/clickhouse-server/config.d/config.xml", "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source", "md5sum": "5c546ce6cff1d67cc1d0aa6b27691419", "checksum": "2fce011fc61d95ef135da61c8bfc9aa6764c203c", "changed": true, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0660", "state": "file", "size": 16515, "invocation": {"module_args": {"src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source", "dest": "/etc/clickhouse-server/config.d/config.xml", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rw,o-rwx", "follow": false, "_original_basename": "config.j2", "checksum": "2fce011fc61d95ef135da61c8bfc9aa6764c203c", "backup": false, "force": true, "unsafe_writes": false, "content": null, "validate": null, "directory_mode": null, "remote_src": null, "local_follow": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'rm -f -r /home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.30.57.13> (0, b'', b'')
+Notification for handler restart-ch has been saved.
+changed: [fsight] => {
+    "changed": true,
+    "checksum": "2fce011fc61d95ef135da61c8bfc9aa6764c203c",
+    "dest": "/etc/clickhouse-server/config.d/config.xml",
+    "diff": [],
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "config.j2",
+            "attributes": null,
+            "backup": false,
+            "checksum": "2fce011fc61d95ef135da61c8bfc9aa6764c203c",
+            "content": null,
+            "dest": "/etc/clickhouse-server/config.d/config.xml",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": "clickhouse",
+            "local_follow": null,
+            "mode": "ug=rw,o-rwx",
+            "owner": "clickhouse",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "5c546ce6cff1d67cc1d0aa6b27691419",
+    "mode": "0660",
+    "owner": "clickhouse",
+    "size": 16515,
+    "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417702.1153028-35477-80783255331879/source",
+    "state": "file",
+    "uid": 600
+}
+
+TASK [ansible-clickhouse : Config | Generate users config] **************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:45
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'echo ~vskibenko && sleep 0'"'"''
+<10.30.57.13> (0, b'/home/vskibenko\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/vskibenko/.ansible/tmp `"&& mkdir "` echo /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016 `" && echo ansible-tmp-1713417707.982105-35486-14125726616016="` echo /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016 `" ) && sleep 0'"'"''
+<10.30.57.13> (0, b'ansible-tmp-1713417707.982105-35486-14125726616016=/home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016\n', b'')
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/stat.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rgbwbmbizseckmrmcojpckjpcfluwpco ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"changed": false, "stat": {"exists": false}, "invocation": {"module_args": {"path": "/etc/clickhouse-server/users.d/users.xml", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_mime": true, "get_attributes": true}}}\n', b'')
+<10.30.57.13> PUT /Users/vskibenko/.ansible/tmp/ansible-local-354493ui3hpg4/tmpry9bcrdn/users.j2 TO /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source
+<10.30.57.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' '[10.30.57.13]'
+<10.30.57.13> (0, b'sftp> put /Users/vskibenko/.ansible/tmp/ansible-local-354493ui3hpg4/tmpry9bcrdn/users.j2 /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'chmod u+x /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/ /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source && sleep 0'"'"''
+<10.30.57.13> (0, b'', b'')
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/copy.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-fvbzicpbbnerkvpesqvqcfgwjdfyrlwr ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"dest": "/etc/clickhouse-server/users.d/users.xml", "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source", "md5sum": "65a032be1aedb365da99304d268cae57", "checksum": "d63ce9d45d51fd619a0286747f7fa0cdc227d8a5", "changed": true, "uid": 600, "gid": 600, "owner": "clickhouse", "group": "clickhouse", "mode": "0660", "state": "file", "size": 1860, "invocation": {"module_args": {"src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source", "dest": "/etc/clickhouse-server/users.d/users.xml", "owner": "clickhouse", "group": "clickhouse", "mode": "ug=rw,o-rwx", "follow": false, "_original_basename": "users.j2", "checksum": "d63ce9d45d51fd619a0286747f7fa0cdc227d8a5", "backup": false, "force": true, "unsafe_writes": false, "content": null, "validate": null, "directory_mode": null, "remote_src": null, "local_follow": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\n', b'')
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'rm -f -r /home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.30.57.13> (0, b'', b'')
+changed: [fsight] => {
+    "changed": true,
+    "checksum": "d63ce9d45d51fd619a0286747f7fa0cdc227d8a5",
+    "dest": "/etc/clickhouse-server/users.d/users.xml",
+    "diff": [],
+    "gid": 600,
+    "group": "clickhouse",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "users.j2",
+            "attributes": null,
+            "backup": false,
+            "checksum": "d63ce9d45d51fd619a0286747f7fa0cdc227d8a5",
+            "content": null,
+            "dest": "/etc/clickhouse-server/users.d/users.xml",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": "clickhouse",
+            "local_follow": null,
+            "mode": "ug=rw,o-rwx",
+            "owner": "clickhouse",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "65a032be1aedb365da99304d268cae57",
+    "mode": "0660",
+    "owner": "clickhouse",
+    "size": 1860,
+    "src": "/home/vskibenko/.ansible/tmp/ansible-tmp-1713417707.982105-35486-14125726616016/source",
+    "state": "file",
+    "uid": 600
+}
+
+TASK [ansible-clickhouse : Config | Generate remote_servers config] *****************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:54
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_clusters is defined",
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [ansible-clickhouse : Config | Generate macros config] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:65
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_macros is defined",
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [ansible-clickhouse : Config | Generate zookeeper servers config] **************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:76
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_zookeeper_nodes is defined",
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [ansible-clickhouse : Config | Fix interserver_http_port and intersever_https_port collision] **********************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/sys.yml:87
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_interserver_https is defined",
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [ansible-clickhouse : Notify Handlers Now] *************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:36
+NOTIFIED HANDLER ansible-clickhouse : Restart Clickhouse Service for fsight
+META: triggered running handlers for fsight
+
+RUNNING HANDLER [ansible-clickhouse : Restart Clickhouse Service] *******************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/handlers/main.yml:3
+ok: [fsight] => {
+    "ansible_facts": {
+        "clickhouse_service_ensure": "restarted"
+    },
+    "changed": false
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:39
+included: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/service.yml for fsight
+
+TASK [ansible-clickhouse : Ensure clickhouse-server.service is enabled: True and state: restarted] **********************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/service.yml:3
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/systemd.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-tstmiuzuucagsuzkpqvpttrmporgmsmj ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"name": "clickhouse-server.service", "changed": true, "status": {"Type": "notify", "ExitType": "main", "Restart": "always", "NotifyAccess": "main", "RestartUSec": "30s", "TimeoutStartUSec": "infinity", "TimeoutStopUSec": "infinity", "TimeoutAbortUSec": "infinity", "TimeoutStartFailureMode": "terminate", "TimeoutStopFailureMode": "terminate", "RuntimeMaxUSec": "infinity", "RuntimeRandomizedExtraUSec": "0", "WatchdogUSec": "0", "WatchdogTimestampMonotonic": "0", "RootDirectoryStartOnly": "no", "RemainAfterExit": "no", "GuessMainPID": "yes", "MainPID": "2177086", "ControlPID": "0", "FileDescriptorStoreMax": "0", "NFileDescriptorStore": "0", "StatusErrno": "0", "Result": "success", "ReloadResult": "success", "CleanResult": "success", "UID": "600", "GID": "600", "NRestarts": "0", "OOMPolicy": "stop", "ExecMainStartTimestamp": "Tue 2024-04-16 20:33:21 +05", "ExecMainStartTimestampMonotonic": "4849002396276", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "2177086", "ExecMainCode": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/bin/clickhouse-server ; argv[]=/usr/bin/clickhouse-server --config=/etc/clickhouse-server/config.xml --pid-file=/run/clickhouse-server/clickhouse-server.pid ; ignore_errors=no ; start_time=[Tue 2024-04-16 20:33:21 +05] ; stop_time=[n/a] ; pid=2177085 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/clickhouse-server ; argv[]=/usr/bin/clickhouse-server --config=/etc/clickhouse-server/config.xml --pid-file=/run/clickhouse-server/clickhouse-server.pid ; flags= ; start_time=[Tue 2024-04-16 20:33:21 +05] ; stop_time=[n/a] ; pid=2177085 ; code=(null) ; status=0/0 }", "Slice": "system.slice", "ControlGroup": "/system.slice/clickhouse-server.service", "MemoryCurrent": "1294860288", "MemoryAvailable": "infinity", "CPUUsageNSec": "74270219421000", "EffectiveCPUs": "0-15", "EffectiveMemoryNodes": "0-1", "TasksCurrent": "695", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "Delegate": "no", "CPUAccounting": "yes", "CPUWeight": "[not set]", "StartupCPUWeight": "[not set]", "CPUShares": "[not set]", "StartupCPUShares": "[not set]", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "IOAccounting": "no", "IOWeight": "[not set]", "StartupIOWeight": "[not set]", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "StartupBlockIOWeight": "[not set]", "MemoryAccounting": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "MemoryMin": "0", "MemoryLow": "0", "MemoryHigh": "infinity", "MemoryMax": "infinity", "MemorySwapMax": "infinity", "MemoryLimit": "infinity", "DevicePolicy": "auto", "TasksAccounting": "yes", "TasksMax": "38439", "IPAccounting": "no", "ManagedOOMSwap": "auto", "ManagedOOMMemoryPressure": "auto", "ManagedOOMMemoryPressureLimit": "0", "ManagedOOMPreference": "none", "Environment": "CLICKHOUSE_WATCHDOG_NO_FORWARD=1", "EnvironmentFiles": "/etc/default/clickhouse (ignore_errors=yes)", "UMask": "0022", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LimitCORE": "infinity", "LimitCORESoft": "infinity", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitNOFILE": "500000", "LimitNOFILESoft": "500000", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitNPROC": "128133", "LimitNPROCSoft": "128133", "LimitMEMLOCK": "8388608", "LimitMEMLOCKSoft": "8388608", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitSIGPENDING": "128133", "LimitSIGPENDINGSoft": "128133", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "OOMScoreAdjust": "0", "CoredumpFilter": "0x33", "Nice": "0", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUAffinityFromNUMA": "no", "NUMAPolicy": "n/a", "TimerSlackNSec": "50000", "CPUSchedulingResetOnFork": "no", "NonBlocking": "no", "StandardInput": "null", "StandardOutput": "journal", "StandardError": "inherit", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "SyslogPriority": "30", "SyslogLevelPrefix": "yes", "SyslogLevel": "6", "SyslogFacility": "3", "LogLevelMax": "-1", "LogRateLimitIntervalUSec": "0", "LogRateLimitBurst": "0", "SecureBits": "0", "CapabilityBoundingSet": "cap_net_bind_service cap_net_admin cap_ipc_lock cap_sys_nice", "AmbientCapabilities": "cap_net_bind_service cap_net_admin cap_ipc_lock cap_sys_nice", "User": "clickhouse", "Group": "clickhouse", "DynamicUser": "no", "RemoveIPC": "no", "PrivateTmp": "no", "PrivateDevices": "no", "ProtectClock": "no", "ProtectKernelTunables": "no", "ProtectKernelModules": "no", "ProtectKernelLogs": "no", "ProtectControlGroups": "no", "PrivateNetwork": "no", "PrivateUsers": "no", "PrivateMounts": "no", "PrivateIPC": "no", "ProtectHome": "no", "ProtectSystem": "no", "SameProcessGroup": "no", "UtmpMode": "init", "IgnoreSIGPIPE": "yes", "NoNewPrivileges": "no", "SystemCallErrorNumber": "2147483646", "LockPersonality": "no", "RuntimeDirectoryPreserve": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectory": "clickhouse-server", "StateDirectoryMode": "0755", "CacheDirectoryMode": "0755", "LogsDirectoryMode": "0755", "ConfigurationDirectoryMode": "0755", "TimeoutCleanUSec": "infinity", "MemoryDenyWriteExecute": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "RestrictNamespaces": "no", "MountAPIVFS": "no", "KeyringMode": "private", "ProtectProc": "default", "ProcSubset": "all", "ProtectHostname": "no", "KillMode": "control-group", "KillSignal": "15", "RestartKillSignal": "15", "FinalKillSignal": "9", "SendSIGKILL": "yes", "SendSIGHUP": "no", "WatchdogSignal": "6", "Id": "clickhouse-server.service", "Names": "clickhouse-server.service", "Requires": "network-online.target system.slice sysinit.target -.mount", "Wants": "time-sync.target", "WantedBy": "multi-user.target", "Conflicts": "shutdown.target", "Before": "multi-user.target shutdown.target", "After": "sysinit.target system.slice systemd-journald.socket basic.target network-online.target time-sync.target -.mount", "RequiresMountsFor": "/run/clickhouse-server", "Description": "ClickHouse Server (analytic DBMS for big data)", "LoadState": "loaded", "ActiveState": "active", "FreezerState": "running", "SubState": "running", "FragmentPath": "/etc/systemd/system/clickhouse-server.service", "UnitFileState": "enabled", "UnitFilePreset": "disabled", "StateChangeTimestamp": "Tue 2024-04-16 20:33:22 +05", "StateChangeTimestampMonotonic": "4849003148589", "InactiveExitTimestamp": "Tue 2024-04-16 20:33:21 +05", "InactiveExitTimestampMonotonic": "4849002344832", "ActiveEnterTimestamp": "Tue 2024-04-16 20:33:22 +05", "ActiveEnterTimestampMonotonic": "4849003148589", "ActiveExitTimestamp": "Tue 2024-04-16 20:33:09 +05", "ActiveExitTimestampMonotonic": "4848990832850", "InactiveEnterTimestamp": "Tue 2024-04-16 20:33:11 +05", "InactiveEnterTimestampMonotonic": "4848992858279", "CanStart": "yes", "CanStop": "yes", "CanReload": "no", "CanIsolate": "no", "CanClean": "runtime", "CanFreeze": "yes", "StopWhenUnneeded": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "AllowIsolate": "no", "DefaultDependencies": "yes", "OnSuccessJobMode": "fail", "OnFailureJobMode": "replace", "IgnoreOnIsolate": "no", "NeedDaemonReload": "no", "JobTimeoutUSec": "infinity", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "ConditionResult": "yes", "AssertResult": "yes", "ConditionTimestamp": "Tue 2024-04-16 20:33:21 +05", "ConditionTimestampMonotonic": "4849002333340", "AssertTimestamp": "Tue 2024-04-16 20:33:21 +05", "AssertTimestampMonotonic": "4849002333349", "Transient": "no", "Perpetual": "no", "StartLimitIntervalUSec": "10s", "StartLimitBurst": "5", "StartLimitAction": "none", "FailureAction": "none", "SuccessAction": "none", "InvocationID": "9d77848514e74dca984a1430011f51f6", "CollectMode": "inactive"}, "enabled": true, "state": "started", "invocation": {"module_args": {"name": "clickhouse-server.service", "enabled": true, "state": "restarted", "daemon_reload": false, "daemon_reexec": false, "scope": "system", "no_block": false, "force": null, "masked": null}}}\n', b'')
+changed: [fsight] => {
+    "changed": true,
+    "enabled": true,
+    "invocation": {
+        "module_args": {
+            "daemon_reexec": false,
+            "daemon_reload": false,
+            "enabled": true,
+            "force": null,
+            "masked": null,
+            "name": "clickhouse-server.service",
+            "no_block": false,
+            "scope": "system",
+            "state": "restarted"
+        }
+    },
+    "name": "clickhouse-server.service",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Tue 2024-04-16 20:33:22 +05",
+        "ActiveEnterTimestampMonotonic": "4849003148589",
+        "ActiveExitTimestamp": "Tue 2024-04-16 20:33:09 +05",
+        "ActiveExitTimestampMonotonic": "4848990832850",
+        "ActiveState": "active",
+        "After": "sysinit.target system.slice systemd-journald.socket basic.target network-online.target time-sync.target -.mount",
+        "AllowIsolate": "no",
+        "AmbientCapabilities": "cap_net_bind_service cap_net_admin cap_ipc_lock cap_sys_nice",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Tue 2024-04-16 20:33:21 +05",
+        "AssertTimestampMonotonic": "4849002333349",
+        "Before": "multi-user.target shutdown.target",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "[not set]",
+        "CPUAccounting": "yes",
+        "CPUAffinityFromNUMA": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUQuotaPeriodUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "[not set]",
+        "CPUUsageNSec": "74270219421000",
+        "CPUWeight": "[not set]",
+        "CacheDirectoryMode": "0755",
+        "CanClean": "runtime",
+        "CanFreeze": "yes",
+        "CanIsolate": "no",
+        "CanReload": "no",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "cap_net_bind_service cap_net_admin cap_ipc_lock cap_sys_nice",
+        "CleanResult": "success",
+        "CollectMode": "inactive",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Tue 2024-04-16 20:33:21 +05",
+        "ConditionTimestampMonotonic": "4849002333340",
+        "ConfigurationDirectoryMode": "0755",
+        "Conflicts": "shutdown.target",
+        "ControlGroup": "/system.slice/clickhouse-server.service",
+        "ControlPID": "0",
+        "CoredumpFilter": "0x33",
+        "DefaultDependencies": "yes",
+        "DefaultMemoryLow": "0",
+        "DefaultMemoryMin": "0",
+        "Delegate": "no",
+        "Description": "ClickHouse Server (analytic DBMS for big data)",
+        "DevicePolicy": "auto",
+        "DynamicUser": "no",
+        "EffectiveCPUs": "0-15",
+        "EffectiveMemoryNodes": "0-1",
+        "Environment": "CLICKHOUSE_WATCHDOG_NO_FORWARD=1",
+        "EnvironmentFiles": "/etc/default/clickhouse (ignore_errors=yes)",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainPID": "2177086",
+        "ExecMainStartTimestamp": "Tue 2024-04-16 20:33:21 +05",
+        "ExecMainStartTimestampMonotonic": "4849002396276",
+        "ExecMainStatus": "0",
+        "ExecStart": "{ path=/usr/bin/clickhouse-server ; argv[]=/usr/bin/clickhouse-server --config=/etc/clickhouse-server/config.xml --pid-file=/run/clickhouse-server/clickhouse-server.pid ; ignore_errors=no ; start_time=[Tue 2024-04-16 20:33:21 +05] ; stop_time=[n/a] ; pid=2177085 ; code=(null) ; status=0/0 }",
+        "ExecStartEx": "{ path=/usr/bin/clickhouse-server ; argv[]=/usr/bin/clickhouse-server --config=/etc/clickhouse-server/config.xml --pid-file=/run/clickhouse-server/clickhouse-server.pid ; flags= ; start_time=[Tue 2024-04-16 20:33:21 +05] ; stop_time=[n/a] ; pid=2177085 ; code=(null) ; status=0/0 }",
+        "ExitType": "main",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FinalKillSignal": "9",
+        "FragmentPath": "/etc/systemd/system/clickhouse-server.service",
+        "FreezerState": "running",
+        "GID": "600",
+        "Group": "clickhouse",
+        "GuessMainPID": "yes",
+        "IOAccounting": "no",
+        "IOReadBytes": "18446744073709551615",
+        "IOReadOperations": "18446744073709551615",
+        "IOSchedulingClass": "0",
+        "IOSchedulingPriority": "0",
+        "IOWeight": "[not set]",
+        "IOWriteBytes": "18446744073709551615",
+        "IOWriteOperations": "18446744073709551615",
+        "IPAccounting": "no",
+        "IPEgressBytes": "[no data]",
+        "IPEgressPackets": "[no data]",
+        "IPIngressBytes": "[no data]",
+        "IPIngressPackets": "[no data]",
+        "Id": "clickhouse-server.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestamp": "Tue 2024-04-16 20:33:11 +05",
+        "InactiveEnterTimestampMonotonic": "4848992858279",
+        "InactiveExitTimestamp": "Tue 2024-04-16 20:33:21 +05",
+        "InactiveExitTimestampMonotonic": "4849002344832",
+        "InvocationID": "9d77848514e74dca984a1430011f51f6",
+        "JobRunningTimeoutUSec": "infinity",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "infinity",
+        "KeyringMode": "private",
+        "KillMode": "control-group",
+        "KillSignal": "15",
+        "LimitAS": "infinity",
+        "LimitASSoft": "infinity",
+        "LimitCORE": "infinity",
+        "LimitCORESoft": "infinity",
+        "LimitCPU": "infinity",
+        "LimitCPUSoft": "infinity",
+        "LimitDATA": "infinity",
+        "LimitDATASoft": "infinity",
+        "LimitFSIZE": "infinity",
+        "LimitFSIZESoft": "infinity",
+        "LimitLOCKS": "infinity",
+        "LimitLOCKSSoft": "infinity",
+        "LimitMEMLOCK": "8388608",
+        "LimitMEMLOCKSoft": "8388608",
+        "LimitMSGQUEUE": "819200",
+        "LimitMSGQUEUESoft": "819200",
+        "LimitNICE": "0",
+        "LimitNICESoft": "0",
+        "LimitNOFILE": "500000",
+        "LimitNOFILESoft": "500000",
+        "LimitNPROC": "128133",
+        "LimitNPROCSoft": "128133",
+        "LimitRSS": "infinity",
+        "LimitRSSSoft": "infinity",
+        "LimitRTPRIO": "0",
+        "LimitRTPRIOSoft": "0",
+        "LimitRTTIME": "infinity",
+        "LimitRTTIMESoft": "infinity",
+        "LimitSIGPENDING": "128133",
+        "LimitSIGPENDINGSoft": "128133",
+        "LimitSTACK": "infinity",
+        "LimitSTACKSoft": "8388608",
+        "LoadState": "loaded",
+        "LockPersonality": "no",
+        "LogLevelMax": "-1",
+        "LogRateLimitBurst": "0",
+        "LogRateLimitIntervalUSec": "0",
+        "LogsDirectoryMode": "0755",
+        "MainPID": "2177086",
+        "ManagedOOMMemoryPressure": "auto",
+        "ManagedOOMMemoryPressureLimit": "0",
+        "ManagedOOMPreference": "none",
+        "ManagedOOMSwap": "auto",
+        "MemoryAccounting": "yes",
+        "MemoryAvailable": "infinity",
+        "MemoryCurrent": "1294860288",
+        "MemoryDenyWriteExecute": "no",
+        "MemoryHigh": "infinity",
+        "MemoryLimit": "infinity",
+        "MemoryLow": "0",
+        "MemoryMax": "infinity",
+        "MemoryMin": "0",
+        "MemorySwapMax": "infinity",
+        "MountAPIVFS": "no",
+        "NFileDescriptorStore": "0",
+        "NRestarts": "0",
+        "NUMAPolicy": "n/a",
+        "Names": "clickhouse-server.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMPolicy": "stop",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "OnSuccessJobMode": "fail",
+        "Perpetual": "no",
+        "PrivateDevices": "no",
+        "PrivateIPC": "no",
+        "PrivateMounts": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "PrivateUsers": "no",
+        "ProcSubset": "all",
+        "ProtectClock": "no",
+        "ProtectControlGroups": "no",
+        "ProtectHome": "no",
+        "ProtectHostname": "no",
+        "ProtectKernelLogs": "no",
+        "ProtectKernelModules": "no",
+        "ProtectKernelTunables": "no",
+        "ProtectProc": "default",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "ReloadResult": "success",
+        "RemainAfterExit": "no",
+        "RemoveIPC": "no",
+        "Requires": "network-online.target system.slice sysinit.target -.mount",
+        "RequiresMountsFor": "/run/clickhouse-server",
+        "Restart": "always",
+        "RestartKillSignal": "15",
+        "RestartUSec": "30s",
+        "RestrictNamespaces": "no",
+        "RestrictRealtime": "no",
+        "RestrictSUIDSGID": "no",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectory": "clickhouse-server",
+        "RuntimeDirectoryMode": "0755",
+        "RuntimeDirectoryPreserve": "no",
+        "RuntimeMaxUSec": "infinity",
+        "RuntimeRandomizedExtraUSec": "0",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "5",
+        "StartLimitIntervalUSec": "10s",
+        "StartupBlockIOWeight": "[not set]",
+        "StartupCPUShares": "[not set]",
+        "StartupCPUWeight": "[not set]",
+        "StartupIOWeight": "[not set]",
+        "StateChangeTimestamp": "Tue 2024-04-16 20:33:22 +05",
+        "StateChangeTimestampMonotonic": "4849003148589",
+        "StateDirectoryMode": "0755",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SuccessAction": "none",
+        "SyslogFacility": "3",
+        "SyslogLevel": "6",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "2147483646",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "yes",
+        "TasksCurrent": "695",
+        "TasksMax": "38439",
+        "TimeoutAbortUSec": "infinity",
+        "TimeoutCleanUSec": "infinity",
+        "TimeoutStartFailureMode": "terminate",
+        "TimeoutStartUSec": "infinity",
+        "TimeoutStopFailureMode": "terminate",
+        "TimeoutStopUSec": "infinity",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "Type": "notify",
+        "UID": "600",
+        "UMask": "0022",
+        "UnitFilePreset": "disabled",
+        "UnitFileState": "enabled",
+        "User": "clickhouse",
+        "UtmpMode": "init",
+        "WantedBy": "multi-user.target",
+        "Wants": "time-sync.target",
+        "WatchdogSignal": "6",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0"
+    }
+}
+
+TASK [ansible-clickhouse : Wait for Clickhouse Server to Become Ready] **************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:42
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/wait_for.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-gzhkthydfbnxrbeyujlgggzoqrmpmozo ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"state": "started", "port": 9000, "search_regex": null, "match_groups": [], "match_groupdict": {}, "path": null, "elapsed": 5, "invocation": {"module_args": {"port": 9000, "delay": 5, "host": "127.0.0.1", "timeout": 300, "connect_timeout": 5, "active_connection_states": ["ESTABLISHED", "FIN_WAIT1", "FIN_WAIT2", "SYN_RECV", "SYN_SENT", "TIME_WAIT"], "state": "started", "sleep": 1, "path": null, "search_regex": null, "exclude_hosts": null, "msg": null}}}\n', b'')
+ok: [fsight] => {
+    "changed": false,
+    "elapsed": 5,
+    "invocation": {
+        "module_args": {
+            "active_connection_states": [
+                "ESTABLISHED",
+                "FIN_WAIT1",
+                "FIN_WAIT2",
+                "SYN_RECV",
+                "SYN_SENT",
+                "TIME_WAIT"
+            ],
+            "connect_timeout": 5,
+            "delay": 5,
+            "exclude_hosts": null,
+            "host": "127.0.0.1",
+            "msg": null,
+            "path": null,
+            "port": 9000,
+            "search_regex": null,
+            "sleep": 1,
+            "state": "started",
+            "timeout": 300
+        }
+    },
+    "match_groupdict": {},
+    "match_groups": [],
+    "path": null,
+    "port": 9000,
+    "search_regex": null,
+    "state": "started"
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:48
+included: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/db.yml for fsight
+
+TASK [ansible-clickhouse : Set ClickHose Connection String] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/db.yml:2
+ok: [fsight] => {
+    "ansible_facts": {
+        "clickhouse_connection_string": "clickhouse-client -h 127.0.0.1 --port 9000"
+    },
+    "changed": false
+}
+
+TASK [ansible-clickhouse : Gather list of existing databases] ***********************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/db.yml:5
+Using module file /opt/homebrew/Cellar/ansible/9.4.0_1/libexec/lib/python3.12/site-packages/ansible/modules/command.py
+Pipelining is enabled.
+<10.30.57.13> ESTABLISH SSH CONNECTION FOR USER: vskibenko
+<10.30.57.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="vskibenko"' -o ConnectTimeout=10 -o 'ControlPath="~/.ssh/ansible-%r@%h:%p"' 10.30.57.13 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rqppiuhhitnewhosrbviyqpghpkzstqh ; /usr/bin/python3.8'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<10.30.57.13> (0, b'\n{"changed": true, "stdout": "INFORMATION_SCHEMA\\ndefault\\ninformation_schema\\nsystem", "stderr": "", "rc": 0, "cmd": ["clickhouse-client", "-h", "127.0.0.1", "--port", "9000", "-q", "show databases"], "start": "2024-04-18 10:22:48.229521", "end": "2024-04-18 10:22:48.323619", "delta": "0:00:00.094098", "msg": "", "invocation": {"module_args": {"_raw_params": "clickhouse-client -h 127.0.0.1 --port 9000 -q \'show databases\'", "_uses_shell": false, "expand_argument_vars": true, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}}\n', b'')
+ok: [fsight] => {
+    "changed": false,
+    "cmd": [
+        "clickhouse-client",
+        "-h",
+        "127.0.0.1",
+        "--port",
+        "9000",
+        "-q",
+        "show databases"
+    ],
+    "delta": "0:00:00.094098",
+    "end": "2024-04-18 10:22:48.323619",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "clickhouse-client -h 127.0.0.1 --port 9000 -q 'show databases'",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2024-04-18 10:22:48.229521",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "INFORMATION_SCHEMA\ndefault\ninformation_schema\nsystem",
+    "stdout_lines": [
+        "INFORMATION_SCHEMA",
+        "default",
+        "information_schema",
+        "system"
+    ]
+}
+
+TASK [ansible-clickhouse : Config | Delete database config] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/db.yml:11
+skipping: [fsight] => {
+    "changed": false,
+    "skipped_reason": "No items in the list"
+}
+
+TASK [ansible-clickhouse : Config | Create database config] *************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/db.yml:20
+skipping: [fsight] => {
+    "changed": false,
+    "skipped_reason": "No items in the list"
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:55
+included: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/dict.yml for fsight
+
+TASK [ansible-clickhouse : Config | Generate dictionary config] *********************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/configure/dict.yml:2
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_dicts|length>0",
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [ansible-clickhouse : include_tasks] *******************************************************************************************************************************************
+task path: /Users/vskibenko/int/main_course/innotech/fsighte/roles/ansible-clickhouse/tasks/main.yml:62
+skipping: [fsight] => {
+    "changed": false,
+    "false_condition": "clickhouse_remove|bool",
+    "skip_reason": "Conditional result was False"
+}
+
+PLAY RECAP **************************************************************************************************************************************************************************
+fsight                     : ok=19   changed=6    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0

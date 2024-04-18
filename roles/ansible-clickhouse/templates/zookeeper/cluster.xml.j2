@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<clickhouse>
+    <clickhouse_remote_servers>
+        <local>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>ch1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </local>
+    </clickhouse_remote_servers>
+
+    <zookeeper-servers>
+        <node index="1">
+            <host>ch1</host>
+            <port>2181</port>
+        </node>
+    </zookeeper-servers>
+
+    <macros>
+    <cluster>local</cluster>
+        <replica>ch1</replica>
+        <shard>01</shard>
+    </macros>
+</clickhouse>
+EOF
+
+
+#second server
+cat <<EOF > /etc/clickhouse-server/cluster.xml
+<?xml version="1.0"?>
+<clickhouse>
+    <clickhouse_remote_servers>
+        <local>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>ch1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </local>
+    </clickhouse_remote_servers>
+
+    <zookeeper-servers>
+        <node index="1">
+            <host>ch1</host>
+            <port>2181</port>
+        </node>
+    </zookeeper-servers>
+
+    <macros>
+    <cluster>local</cluster>
+        <replica>ch2</replica>
+        <shard>01</shard>
+    </macros>
+</clickhouse>

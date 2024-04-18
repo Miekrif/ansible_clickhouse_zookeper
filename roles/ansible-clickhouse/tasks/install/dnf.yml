@@ -1,0 +1,23 @@
+---
+# Main installation actions
+# https://clickhouse.com/docs/en/getting-started/#installation
+
+- name: Install ClickHouse common static package
+  command: urpmi --auto {{ clickhouse_common_static_package }}
+  become: true
+  tags: [install]
+
+- name: Install ClickHouse server common package
+  command: urpmi --auto {{ clickhouse_server_common_package }}
+  become: true
+  tags: [install]
+
+- name: Install ClickHouse server package
+  command: urpmi --auto {{ clickhouse_server_package }}
+  become: true
+  tags: [install]
+
+- name: Install ClickHouse client package
+  command: urpmi --auto {{ clickhouse_client_package }}
+  become: true
+  tags: [install]
