@@ -4,10 +4,10 @@ zookeeper_install: true
 zookeeper_rpm_package: "/path/to/zookeeper.rpm"
 
 # defaults file for clickhouse
-clickhouse_common_static_package: "/home/vskibenko/clickhouse/clickhouse-common-static-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
-clickhouse_server_common_package: "/home/vskibenko/clickhouse/clickhouse-server-common-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
-clickhouse_server_package: "/home/vskibenko/clickhouse/clickhouse-server-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
-clickhouse_client_package: "/home/vskibenko/clickhouse/clickhouse-client-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
+clickhouse_common_static_package: "{{dest_path_clickhouse}}/clickhouse-common-static-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
+clickhouse_server_common_package: "{{dest_path_clickhouse}}/clickhouse-server-common-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
+clickhouse_server_package: "{{dest_path_clickhouse}}/clickhouse-server-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
+clickhouse_client_package: "{{dest_path_clickhouse}}/clickhouse-client-24.3.1.1-Foresight.DWH-rosa2021.1.x86_64.rpm"
 clickhouse_version: 'latest'
 clickhouse_service_ensure: 'started'
 clickhouse_service_enable: true

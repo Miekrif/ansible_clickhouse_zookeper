@@ -1,6 +1,12 @@
 ---
-- hosts: fsight
+- hosts: clickhouse
   roles:
+    - role: copy_files
     - role: ansible-clickhouse-dp
     - role: ansible-clickhouse
+  vars:
+    copy_path_clickhouse: /opt/ansible/RPM/clickhouse
+    copy_path_zookeeper: /opt/ansible/RPM/zookeeper
+    dest_path_clickhouse: /tmp/clickhouse
+    dest_path_zookeeper: /tmp/zookeeper
 

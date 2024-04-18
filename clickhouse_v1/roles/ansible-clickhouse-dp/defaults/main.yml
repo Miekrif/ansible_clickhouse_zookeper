@@ -1,7 +1,7 @@
 ---
 
 # -------- zookeeper
-zookeeper_rpm_package: "/home/vskibenko/zookeeper/"
+zookeeper_rpm_package: "{{dest_path_zookeeper}}"
 
 zookeeper_group: zookeeper
 zookeeper_user: zookeeper

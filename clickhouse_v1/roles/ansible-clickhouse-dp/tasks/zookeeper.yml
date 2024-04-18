@@ -39,12 +39,17 @@
     group: '{{ zookeeper_group }}'
     owner: '{{ zookeeper_user }}'
 
+- name: Создать директорию для конфигурации Zookeeper, если она не существует
+  file:
+    path: /etc/zookeeper/conf
+    state: directory
+  become: true
 
 # /etc/zookeeper/conf/zoo.cfg is the default file ZooKeeper will use when starting
 - name: Template configuration file to zoo.cfg
   template:
     src: zoo.cfg.j2
-    dest: /etc/zookeeper/conf/zoo.cfg
+    dest: /etc/zookeeper/zoo.cfg
   notify:
     - Restart ZooKeeper
 
@@ -58,10 +63,10 @@
 
 
 - name: Start the ZooKeeper
-  # service:
-  #   name: zookeeper
-  #   state: started
-  #   enabled: yes
-  command: /usr/share/zookeeper/bin/zkServer.sh restart
-  check_mode: no
+  service:
+   name: zookeeper
+   state: started
+   enabled: yes
+#  command: /usr/share/zookeeper/bin/zkServer.sh restart
+#  check_mode: no
 

@@ -1,0 +1,16 @@
+---
+- name: Copy ClickHouse files
+  copy:
+    src: "{{ copy_path_clickhouse }}"
+    dest: "{{ dest_path_clickhouse }}"
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Copy ZooKeeper files
+  copy:
+    src: "{{ copy_path_zookeeper }}"
+    dest: "{{ dest_path_zookeeper }}"
+    owner: root
+    group: root
+    mode: '0755'
