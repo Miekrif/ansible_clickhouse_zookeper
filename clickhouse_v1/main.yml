@@ -1,5 +1,6 @@
 ---
 - hosts: fsight
   roles:
+    - role: ansible-clickhouse-dp
     - role: ansible-clickhouse
 
